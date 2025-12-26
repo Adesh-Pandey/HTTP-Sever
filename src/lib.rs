@@ -48,7 +48,6 @@ impl ThreadPool {
         let mut a = 0;
         let mut workers = vec![];
         loop {
-            println!("{}", a);
             a = a + 1;
             workers.push(Worker {
                 id: a.to_string(),
@@ -57,8 +56,6 @@ impl ThreadPool {
             if a == count {
                 break;
             }
-
-            println!("{}", a);
         }
 
         ThreadPool { sender, workers }
